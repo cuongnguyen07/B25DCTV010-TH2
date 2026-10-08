@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thư Viện Lớp</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Thư Viện Lớp</h1>
+    <span>Yêu thích: <strong id="fav-count">0</strong></span>
+  </header>
+
+  <div class="toolbar">
+    <input type="text" id="search-input" placeholder="Tìm theo tên sách..." />
+    <select id="genre-select">
+      <option value="">-- Tất cả thể loại --</option>
+    </select>
+  </div>
+
+  <p id="status">Đang tải...</p>
+
+  <main id="book-list"></main>
+
+  <div class="add-section">
+    <button class="btn-primary" onclick="toggleForm()">+ Thêm sách mới</button>
+
+    <form id="add-form" onsubmit="submitForm(event)">
+      <h2>Thêm sách mới</h2>
+
+      <div class="form-group">
+        <label>Tên sách *</label>
+        <input type="text" id="inp-title" oninput="validateTitle()" />
+        <span class="error-msg" id="err-title"></span>
+      </div>
+
+      <div class="form-group">
+        <label>Tác giả *</label>
+        <input type="text" id="inp-author" oninput="validateAuthor()" />
+        <span class="error-msg" id="err-author"></span>
+      </div>
+
+      <div class="form-group">
+        <label>Thể loại *</label>
+        <select id="inp-genre" onchange="validateGenre()">
+          <option value="">-- Chọn thể loại --</option>
+          <option value="Văn học">Văn học</option>
+          <option value="Khoa học">Khoa học</option>
+          <option value="Lịch sử">Lịch sử</option>
+          <option value="Kỹ năng">Kỹ năng</option>
+          <option value="Thiếu nhi">Thiếu nhi</option>
+        </select>
+        <span class="error-msg" id="err-genre"></span>
+      </div>
+
+      <div class="form-group">
+        <label>Năm xuất bản *</label>
+        <input type="number" id="inp-year" placeholder="1900 – năm nay" oninput="validateYear()" />
+        <span class="error-msg" id="err-year"></span>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">Thêm</button>
+        <button type="button" class="btn-secondary" onclick="toggleForm()">Huỷ</button>
+      </div>
+    </form>
+  </div>
+
+  <button id="theme-btn" onclick="toggleTheme()"></button>
+
+  <script src="app.js"></script>
+</body>
+</html>

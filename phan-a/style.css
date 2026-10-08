@@ -1,0 +1,218 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f0f0f0;
+}
+
+header {
+  background: #3b6ff7;
+  color: white;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toolbar {
+  padding: 12px 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.toolbar input, .toolbar select {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#status {
+  padding: 4px 20px;
+  color: #555;
+  font-size: 14px;
+}
+
+#book-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 16px 20px;
+}
+
+@media (max-width: 600px) {
+  #book-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.book-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.book-card h3 {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+}
+
+.book-card p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.book-card .genre {
+  display: inline-block;
+  background: #3b6ff7;
+  color: white;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-top: 4px;
+}
+
+.book-card .actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.btn-fav {
+  flex: 1;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  background: white;
+}
+
+.btn-fav.active {
+  background: #e53e3e;
+  color: white;
+  border-color: #e53e3e;
+}
+
+.btn-del {
+  flex: 1;
+  padding: 6px;
+  border: 1px solid #e53e3e;
+  border-radius: 4px;
+  cursor: pointer;
+  background: white;
+  color: #e53e3e;
+}
+
+.add-section {
+  padding: 10px 20px;
+}
+
+#add-form {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 450px;
+  margin-top: 10px;
+  display: none;
+}
+
+#add-form h2 {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+}
+
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-group input.invalid {
+  border-color: red;
+}
+
+.error-msg {
+  color: red;
+  font-size: 12px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: #3b6ff7;
+  color: white;
+}
+
+.btn-secondary {
+  background: #ccc;
+  color: #333;
+}
+
+#theme-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 20px;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  background: white;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+body.dark {
+  background: #1a202c;
+  color: white;
+}
+
+body.dark header {
+  background: #2b4bbf;
+}
+
+body.dark .book-card {
+  background: #2d3748;
+  border-color: #4a5568;
+  color: white;
+}
+
+body.dark #add-form {
+  background: #2d3748;
+  border-color: #4a5568;
+  color: white;
+}
+
+body.dark .toolbar input,
+body.dark .toolbar select {
+  background: #2d3748;
+  color: white;
+  border-color: #4a5568;
+}
